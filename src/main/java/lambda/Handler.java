@@ -60,9 +60,6 @@ public class Handler implements RequestHandler<S3Event, String> {
         int interval = length / MIN_FRAME;
         int j = 0;
         for (int i = 0; i < length; i++) {
-            if (g.grab() == null) {
-                System.out.println("Frame is null");
-            }
             org.bytedeco.javacv.Frame frame = g.grabImage();
             if (frame == null || frame.image == null) {
                 System.out.println("null");
